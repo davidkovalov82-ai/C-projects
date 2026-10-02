@@ -6,14 +6,18 @@ int main(void) {
 
     do {
         printf("Enter a number: ");
-        scanf("%lf", &result);
-
+        if (scanf("%lf", &result) != 1) {
+            printf("Invalid number\n");
+        }
         printf("Choose operation (+, -, *, /, =): ");
-        scanf(" %c", &operation);
-
+        if (scanf(" %c", &operation) != 1) {
+            printf("Invalid operation\n");
+        }
         while (operation != '=') {
             printf("Enter a number: ");
-            scanf("%lf", &num);
+            if (scanf("%lf", &num) != 1) {
+                printf("Invalid number\n");
+            }
 
             if (operation == '*') {
                 result *= num;
@@ -31,18 +35,19 @@ int main(void) {
             else if (operation == '-') {
                 result -= num;
             }
-            else {
-                printf("Unknown operation\n");
-                return 1;
-            }
 
             printf("Choose operation (+, -, *, /, =): ");
-            scanf(" %c", &operation);
+            if (scanf(" %c", &operation) != 1) {
+                printf("Invalid operation\n");
+            }
         }
 
         printf("Result: %.2f\n", result);
 
         printf("Enter q to quit or y to start a new calculation: ");
+        if (scanf(" %c", &new_calculation) != 1) {
+            printf("Invalid input\n");
+        }
         scanf(" %c", &new_calculation);
 
     } while (new_calculation != 'q');

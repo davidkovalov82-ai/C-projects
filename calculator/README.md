@@ -28,9 +28,9 @@ Open the project directory in CLion and run the `Calculator` configuration.
 | Done | Feature | Expected behavior | C concepts |
 |:---:|---|---|---|
 | ✅ | Basic calculator | Calculate one operation with two numbers | Variables, `double`, `char`, `scanf`, `printf`, `if` or `switch` |
-| ⬜ | Chained calculations | Accept any number of values and operations until the user enters `=` | `while`, `break`, accumulated result |
-| ⬜ | Multiple calculations | Start another calculation without restarting the program; exit with `q` | `do while`, nested loops |
-| ⬜ | Input validation | Handle text, empty input, and malformed numbers | Return value of `scanf`, input-buffer cleanup |
+| ✅ | Chained calculations | Accept any number of values and operations until the user enters `=` | `while`, `break`, accumulated result |
+| ✅ | Multiple calculations | Start another calculation without restarting the program; exit with `q` | `do while`, nested loops |
+| ✅ | Input validation | Handle text, empty input, and malformed numbers | Return value of `scanf`, input-buffer cleanup |
 | ⬜ | Additional operations | Add remainder, power, and square root | `%`, `math.h`, `pow`, `sqrt` |
 | ⬜ | Functions | Move input, calculation, and output into separate functions | Parameters, return values, function prototypes |
 | ⬜ | History | Keep the last 10 calculations in memory | Arrays, structures, strings |
