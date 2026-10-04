@@ -290,7 +290,8 @@ static void load_history(Calculator *calculator) {
         char *end;
         errno = 0;
         double result = strtod(line, &end);
-        if (end == line || *end != '\t' || errno == ERANGE || !isfinite(result)) {
+        if (end == line || *end != '\t' || !isfinite(result) ||
+            (errno == ERANGE && result == 0)) {
             continue;
         }
         char *expression = end + 1;
@@ -353,8 +354,7 @@ static int calculate(Calculator *calculator, const char *expression) {
     show_result(result);
     calculator->last_result = result;
     add_history(calculator, expression, result);
-    save_history(calculator);
-    return 1;
+    return save_history(calculator);
 }
 
 static int memory_command(Calculator *calculator, const char *command) {

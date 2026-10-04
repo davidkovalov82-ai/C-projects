@@ -5,3 +5,4 @@ cmake-build-*/
 calculator_history.txt
 /calculator/Calculator
 *.o
+__pycache__/
