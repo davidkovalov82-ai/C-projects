@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+build/
+cmake-build-*/
+calculator_history.txt
+/calculator/Calculator
+*.o
